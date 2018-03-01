@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-list>
+        <ion-item *ngFor="let c of court" (click)="loadPlaygroundDetail(c)">
+            <ion-icon name="ionic" item-start>
+            </ion-icon>
+            <ion-thumbnail >
+                <img style="width:100px;height: 100px " src={{c.logo}}>
+            </ion-thumbnail>   
+            {{c.namefa}}
+        
+        </ion-item>
+    </ion-list>
+    
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)" *ngIf="page < totalPage">
+    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading more playgrounds ..."></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+    
+    
+    
+  <h2>Welcome to BerimBasket!</h2>
+  <p>
+    This project comes with many services related to basketball.
+  </p>
+  <p>
+    Take a look at the <code>berimbasket.ir</code> website to register yourselft and login then complete you profile and add posts,
+    about basketball and related subjects.
+  </p>
+</ion-content>
