@@ -5,6 +5,9 @@ import { RestProvider } from '../../providers/rest/rest';
 import { LoadingController } from 'ionic-angular';
 import { Geolocation ,GeolocationOptions ,Geoposition ,PositionError } from '@ionic-native/geolocation'; 
 
+import { TranslateService } from '@ngx-translate/core';
+import { LanguageServiceProvider } from "../../providers/language-service/language-service";
+import { LanguageModel } from "../../models/language.model";
 
 @Component({
   selector: 'page-home',
@@ -12,6 +15,9 @@ import { Geolocation ,GeolocationOptions ,Geoposition ,PositionError } from '@io
     providers:[RestProvider]
 })
 export class HomePage {
+
+    languageSelected : any = 'en';
+    languages : Array<LanguageModel>;
 
     public court = new Array();
     private detailPage;
@@ -29,23 +35,32 @@ export class HomePage {
     totalPage = 1;
     
     
-  constructor(public navCtrl: NavController, public playerDataProvider:RestProvider, public loadingCtrl:LoadingController,private geolocation : Geolocation) {
+  constructor(
+        public navCtrl: NavController, 
+        public playerDataProvider:RestProvider, 
+        public loadingCtrl:LoadingController,
+        private geolocation : Geolocation,    
+        public translate: TranslateService,
+        public languageService: LanguageServiceProvider
+    ) {
 
       this.detailPage = PlaygroundDetailPage;
       
       let loader= loadingCtrl.create({content:"Loading Playgrounds"});
       loader.present();
       
+      this.languages = this.languageService.getLanguages();
+      this.setLanguage();
       
        playerDataProvider.getPlayground(0,35.723284,51.441968).subscribe(court=>{
         console.log('court : ' ,court)  ;
-           for(let i =0;i<court.length;i++){
-               if(court[i].images[0])
+            for(let i =0;i<court.length;i++){
+                if(court[i].images[0])
             court[i].logo="http://berimbasket.ir"+court[i].images[0];
-               else
+                else
                     court[i].logo="../../assets/imgs/logo.png";
             }
-           //images
+            //images
            
            loader.dismiss();
                      
@@ -118,6 +133,15 @@ export class HomePage {
         this.getUserPosition();
     }    
 
-
+    setLanguage(){
+        let defaultLanguage = this.translate.getDefaultLang();
+        if(this.languageSelected){
+          this.translate.setDefaultLang(this.languageSelected);
+          this.translate.use(this.languageSelected);
+        }else{
+          this.languageSelected = defaultLanguage;
+          this.translate.use(defaultLanguage);
+        }
+      }
 
 }

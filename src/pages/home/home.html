@@ -1,10 +1,18 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Home</ion-title>
+    <ion-title>{{ 'HOME' | translate }}</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
+    <ion-list no-lines>
+        <ion-item>
+          <ion-label>{{ 'SELECT_LANGUAGE' | translate }}</ion-label>
+          <ion-select [(ngModel)]="languageSelected" (ionChange)='setLanguage()' [cancelText]="'CANCEL' | translate" [okText]="'OK' | translate">
+            <ion-option *ngFor="let item of languages" [value]="item.code">{{item.name}}</ion-option>
+          </ion-select>
+        </ion-item>
+      </ion-list>
     <ion-list>
         <ion-item *ngFor="let c of court" (click)="loadPlaygroundDetail(c)">
             <ion-icon name="ionic" item-start>
@@ -13,7 +21,6 @@
                 <img style="width:100px;height: 100px " src={{c.logo}}>
             </ion-thumbnail>   
             {{c.namefa}}
-        
         </ion-item>
     </ion-list>
     
