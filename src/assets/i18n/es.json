@@ -1,0 +1,13 @@
+{
+  "HOME": "Inicio",
+  "ABOUT": "Acerca",
+  "CONTACT": "Contacto",
+  "Player": "بازیکنان",
+  "HI" : "Hola {{name}}",
+  "AGE" : "Tu edad es: {{age}}",
+  "SELECT_LANGUAGE": "Selecciona tu idioma",
+  "LANGUAGES": "Idiomas",
+  "OK": "OK",
+  "CANCEL": "Cancelar",
+  "FOLLOW_US_TW": "Seguinos en Twitter"
+}
