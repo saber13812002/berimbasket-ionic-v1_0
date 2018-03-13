@@ -2,6 +2,7 @@
   "HOME": "استهلال",
   "ABOUT": "حول",
   "CONTACT": "اتصال",
+  "Player": "بازیکنان",
   "HI" : "مرحبا {{name}}",
   "AGE" : "عمرك: {{age}}",
   "SELECT_LANGUAGE": "اختر لغتك",

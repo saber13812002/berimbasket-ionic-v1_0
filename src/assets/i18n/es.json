@@ -2,6 +2,7 @@
   "HOME": "Inicio",
   "ABOUT": "Acerca",
   "CONTACT": "Contacto",
+  "Player": "بازیکنان",
   "HI" : "Hola {{name}}",
   "AGE" : "Tu edad es: {{age}}",
   "SELECT_LANGUAGE": "Selecciona tu idioma",

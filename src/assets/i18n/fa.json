@@ -2,6 +2,7 @@
   "HOME": "خانه",
   "ABOUT": "درباره",
   "CONTACT": "تماس با ما",
+  "Player": "بازیکنان",
   "HI" : "سلام {{name}}",
   "AGE" : "سن شما: {{age}}",
   "SELECT_LANGUAGE": "انتخاب زبان",

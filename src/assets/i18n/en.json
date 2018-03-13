@@ -2,6 +2,7 @@
   "HOME": "Home",
   "ABOUT": "About",
   "CONTACT": "Contact",
+  "Player": "بازیکنان",
   "HI" : "Hi {{name}}",
   "AGE" : "Your age is: {{age}}",
   "SELECT_LANGUAGE": "Select your language",
