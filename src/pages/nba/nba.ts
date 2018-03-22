@@ -29,6 +29,8 @@ export class NbaPage {
     totalData = 100;
     totalPage = 1;
     
+    apiUrl = 'https://berimbasket.ir/';
+    apiFolder = 'bball';    
     
   constructor(public navCtrl: NavController, public navParams: NavParams, public playerDataProvider:RestProvider, public loadingCtrl:LoadingController) {
       
@@ -38,8 +40,8 @@ export class NbaPage {
         playerDataProvider.getMatch(0).subscribe(match=>{
         console.log('match : ' ,match)  ;
             for(let i =0;i<match.length;i++){
-            match[i].logoA="http://berimbasket.ir"+match[i].logoTitleA;
-            match[i].logoB="http://berimbasket.ir"+match[i].logoTitleB;
+            match[i].logoA=this.apiUrl+match[i].logoTitleA;
+            match[i].logoB=this.apiUrl+match[i].logoTitleB;
             }
             loader.dismiss();
             
@@ -67,8 +69,8 @@ export class NbaPage {
            .subscribe(
              match => {
              for(let i =0;i<match.length;i++){
-            match[i].logoA="http://berimbasket.ir"+match[i].logoTitleA;
-            match[i].logoB="http://berimbasket.ir"+match[i].logoTitleB;
+            match[i].logoA=this.apiUrl+match[i].logoTitleA;
+            match[i].logoB=this.apiUrl+match[i].logoTitleB;
             }
                this.data = match;
                this.perPage = this.data.per_page;

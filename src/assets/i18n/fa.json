@@ -3,11 +3,21 @@
   "ABOUT": "درباره",
   "CONTACT": "تماس با ما",
   "Player": "بازیکنان",
+  "Players": "بازیکنان",
+  "NBA": "نتایج",
+  "Playgrounds": "زمین بسکت",
+  "MAPS": "نقشه",
+  "My": "پروفایل",
   "HI" : "سلام {{name}}",
   "AGE" : "سن شما: {{age}}",
   "SELECT_LANGUAGE": "انتخاب زبان",
   "LANGUAGES": "زبان ها",
   "OK": "اعمال",
   "CANCEL": "انصراف",
-  "FOLLOW_US_TW": "ما را در توییتر دنبال کنید"
+  "FOLLOW_US_TW": "ما را در توییتر دنبال کنید",
+  "Nearby Me Playgrounds":"زمین های نزدیک",
+  "NBA Score Box":"نتایج مسابقات",
+  "Player Details":"جزئیات بازیکن",
+  "Playground Details":"جزئیات زمین بسکت",
+  "Setting":"تنظیمات"
 }

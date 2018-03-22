@@ -26,7 +26,10 @@ export class PlayerDetailPage {
         place:"",
         uImages:""
     };
-    
+
+    apiUrl = 'https://berimbasket.ir/';
+    apiFolder = 'bball';    
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
       let personId=navParams.data.person.id;
       this.person.name= navParams.data.person.namefa;
@@ -37,7 +40,7 @@ export class PlayerDetailPage {
       this.person.coach= navParams.data.person.coach;
       
       if(navParams.data.person.uImages!=null)
-        this.person.uImages= "https://berimbasket.ir"+ navParams.data.person.uImages;
+        this.person.uImages= this.apiFolder+ navParams.data.person.uImages;
       else
         this.person.uImages= "";
   }

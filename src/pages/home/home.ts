@@ -25,6 +25,8 @@ export class HomePage {
     options : GeolocationOptions;
     currentPos : Geoposition;
 
+    apiUrl = 'https://berimbasket.ir/';
+    apiFolder = 'bball';      
     
     data: any;
     //users: string[];
@@ -56,7 +58,7 @@ export class HomePage {
         console.log('court : ' ,court)  ;
             for(let i =0;i<court.length;i++){
                 if(court[i].images[0])
-            court[i].logo="http://berimbasket.ir"+court[i].images[0];
+            court[i].logo=this.apiUrl+court[i].images[0];
                 else
                     court[i].logo="../../assets/imgs/logo.png";
             }
@@ -94,7 +96,7 @@ export class HomePage {
              court => {
             for(let i =0;i<court.length;i++){
                if(court[i].images[0])
-            court[i].logo="http://berimbasket.ir"+court[i].images[0];
+            court[i].logo=this.apiUrl+court[i].images[0];
                else
                     court[i].logo="../../assets/imgs/logo.png";
             }

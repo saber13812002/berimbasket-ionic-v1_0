@@ -16,7 +16,8 @@ export class ContactPage {
     public people = new Array();
     
     private detailPage;
-    
+    apiUrl = 'https://berimbasket.ir/';
+    apiFolder = 'bball';  
     data: any;
     //users: string[];
     errorMessage: string;
@@ -36,8 +37,11 @@ export class ContactPage {
       playerDataProvider.getPlayer(0).subscribe(people=>{
         console.log('people : ' ,people)  ;
             for(let i =0;i<people.length;i++){
-            people[i].logo="http://berimbasket.ir"+people[i].uImages;
-            //people[i].logoB="http://berimbasket.ir"+people[i].logoTitleB;
+            people[i].logo=this.apiUrl+people[i].uImages;
+            // people[i].instagram="https://instagram.com/";
+            // people[i].telegram="https://t.me/";
+            people[i].apiUrl=this.apiUrl+this.apiFolder;
+            //people[i].logoB="https://berimbasket.ir"+people[i].logoTitleB;
             }
           loader.dismiss();
           
@@ -67,8 +71,8 @@ export class ContactPage {
            .subscribe(
              people => {
             for(let i =0;i<people.length;i++){
-            people[i].logo="https://berimbasket.ir"+people[i].uImages;
-            //people[i].logoB="http://berimbasket.ir"+people[i].logoTitleB;
+            people[i].logo=this.apiUrl+people[i].uImages;
+            //people[i].logoB="basket.ir"+people[i].logoTitleB;
             }
                this.data = people;
                this.perPage = this.data.per_page;
