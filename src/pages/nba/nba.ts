@@ -11,7 +11,9 @@ import { LoadingController } from 'ionic-angular';
  * Ionic pages and navigation.
  */
 
-@IonicPage()
+@IonicPage({
+  name: 'nba'
+})
 @Component({
   selector: 'page-nba',
   templateUrl: 'nba.html',

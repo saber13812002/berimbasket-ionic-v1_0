@@ -8,7 +8,9 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
  * Ionic pages and navigation.
  */
 
-@IonicPage()
+@IonicPage({
+  name: 'player-detail'
+})
 @Component({
   selector: 'page-player-detail',
   templateUrl: 'player-detail.html',
@@ -30,7 +32,10 @@ export class PlayerDetailPage {
     apiUrl = 'https://berimbasket.ir/';
     apiFolder = 'bball';    
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(
+    public navCtrl: NavController, 
+    public navParams: NavParams
+  ) {
       let personId=navParams.data.person.id;
       this.person.name= navParams.data.person.namefa;
       this.person.height= navParams.data.person.height;

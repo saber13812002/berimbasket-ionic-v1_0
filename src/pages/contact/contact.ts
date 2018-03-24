@@ -1,9 +1,12 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { PlayerDetailPage } from '../player-detail/player-detail';
 import { RestProvider } from '../../providers/rest/rest';
 import { LoadingController } from 'ionic-angular';
 
+@IonicPage({
+  name: 'contact'
+})
 @Component({
   selector: 'page-contact',
   templateUrl: 'contact.html',
@@ -27,7 +30,11 @@ export class ContactPage {
     totalPage = 1;
     
     
-  constructor(public navCtrl: NavController , public playerDataProvider:RestProvider, public loadingCtrl:LoadingController) {
+  constructor(
+    public navCtrl: NavController , 
+    public playerDataProvider:RestProvider, 
+    public loadingCtrl:LoadingController
+  ) {
       
       this .detailPage = PlayerDetailPage;
       

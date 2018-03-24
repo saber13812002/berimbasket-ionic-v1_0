@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { PlaygroundDetailPage } from '../playground-detail/playground-detail';
 import { RestProvider } from '../../providers/rest/rest';
 import { LoadingController } from 'ionic-angular';
@@ -9,6 +9,9 @@ import { TranslateService } from '@ngx-translate/core';
 import { LanguageServiceProvider } from "../../providers/language-service/language-service";
 import { LanguageModel } from "../../models/language.model";
 
+@IonicPage({
+    name: 'home'
+})
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html',

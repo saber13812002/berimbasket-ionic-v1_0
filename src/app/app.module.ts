@@ -45,14 +45,19 @@ import { RestProvider } from '../providers/rest/rest';
     HttpModule,
     BrowserModule,
     HttpClientModule,
-    IonicModule.forRoot(MyApp),
+    IonicModule.forRoot(MyApp,{},{
+      links: [
+        {segment: 'player', component: PlayerDetailPage, name: 'PlayerDetail'},
+        {segment: 'playground/:id', component: PlaygroundDetailPage, name: 'PlaygroundDetail'},
+        ...
+    ]}),
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
         useFactory: (createTranslateLoader),
         deps: [HttpClient]
       }
-    }),
+    })
   ],
   bootstrap: [IonicApp],
   entryComponents: [
