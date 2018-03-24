@@ -49,7 +49,7 @@ import { RestProvider } from '../providers/rest/rest';
       links: [
         {segment: 'player', component: PlayerDetailPage, name: 'PlayerDetail'},
         {segment: 'playground/:id', component: PlaygroundDetailPage, name: 'PlaygroundDetail'},
-        ...
+        
     ]}),
     TranslateModule.forRoot({
       loader: {
