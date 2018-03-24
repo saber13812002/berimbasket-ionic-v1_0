@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { PlaygroundDetailPage } from '../playground-detail/playground-detail';
 import { RestProvider } from '../../providers/rest/rest';
 import { LoadingController } from 'ionic-angular';
@@ -9,6 +9,9 @@ import { TranslateService } from '@ngx-translate/core';
 import { LanguageServiceProvider } from "../../providers/language-service/language-service";
 import { LanguageModel } from "../../models/language.model";
 
+@IonicPage({
+    name: 'home'
+})
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html',
@@ -25,6 +28,8 @@ export class HomePage {
     options : GeolocationOptions;
     currentPos : Geoposition;
 
+    apiUrl = 'https://berimbasket.ir/';
+    apiFolder = 'bball';      
     
     data: any;
     //users: string[];
@@ -56,7 +61,7 @@ export class HomePage {
         console.log('court : ' ,court)  ;
             for(let i =0;i<court.length;i++){
                 if(court[i].images[0])
-            court[i].logo="http://berimbasket.ir"+court[i].images[0];
+            court[i].logo=this.apiUrl+court[i].images[0];
                 else
                     court[i].logo="../../assets/imgs/logo.png";
             }
@@ -94,7 +99,7 @@ export class HomePage {
              court => {
             for(let i =0;i<court.length;i++){
                if(court[i].images[0])
-            court[i].logo="http://berimbasket.ir"+court[i].images[0];
+            court[i].logo=this.apiUrl+court[i].images[0];
                else
                     court[i].logo="../../assets/imgs/logo.png";
             }

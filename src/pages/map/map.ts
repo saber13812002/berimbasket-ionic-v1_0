@@ -17,7 +17,10 @@ declare var google;
 
 
 
-@IonicPage()
+
+@IonicPage({
+    name: 'map'
+})
 @Component({
   selector: 'page-map',
   templateUrl: 'map.html',
