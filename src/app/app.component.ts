@@ -10,7 +10,7 @@ import { TabsPage } from '../pages/tabs/tabs';
 @Component({
   templateUrl: 'app.html'
 })
-export class MyApp {
+export class BerimbasketApp {
   rootPage:any = TabsPage;
   textDir: string = "ltr";
 

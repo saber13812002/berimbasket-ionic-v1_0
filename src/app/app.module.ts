@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule , HttpClient} from '@angular/common/http';
 import { HttpModule} from '@angular/http'; 
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
-import { MyApp } from './app.component';
+import { BerimbasketApp } from './app.component';
 import { Platform } from 'ionic-angular';
 
 import { Geolocation  } from '@ionic-native/geolocation'; 
@@ -29,7 +29,7 @@ import { RestProvider } from '../providers/rest/rest';
 
 @NgModule({
   declarations: [ 
-    MyApp,
+    BerimbasketApp,
     AboutPage,
     ContactPage,
     HomePage,
@@ -45,7 +45,7 @@ import { RestProvider } from '../providers/rest/rest';
     HttpModule,
     BrowserModule,
     HttpClientModule,
-    IonicModule.forRoot(MyApp,{},{
+    IonicModule.forRoot(BerimbasketApp,{},{
       links: [
         {segment: 'player', component: PlayerDetailPage, name: 'PlayerDetail'},
         {segment: 'playground/:id', component: PlaygroundDetailPage, name: 'PlaygroundDetail'},
@@ -61,7 +61,7 @@ import { RestProvider } from '../providers/rest/rest';
   ],
   bootstrap: [IonicApp],
   entryComponents: [
-    MyApp, 
+    BerimbasketApp, 
     AboutPage,
     ContactPage,
     HomePage,
